@@ -1,69 +1,63 @@
+
 0x1B. C - Sorting algorithms & Big O
-====================================
+C
+Algorithm
+Data structure
+ By: Alexandre Gautier
+ Weight: 2
+ Project to be done in teams of 2 people (your team: KAKANYERO innocent)
+ Project will start Apr 19, 2023 6:00 AM, must end by Apr 25, 2023 6:00 AM
+ Checker was released at Apr 20, 2023 6:00 PM
+ An auto review will be launched at the deadline
 
--   By Alexandre Gautier
--   Weight: 2
 
-![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/248/willy-wonka.png)
 
 Background Context
-------------------
-
-This project is meant to be done by groups of two students. Each group of two should [pair program](https://alx-intranet.hbtn.io/rltoken/gIcHRL9I7i1lw2CTAll37A "pair program") for at least the mandatory part.
+This project is meant to be done by groups of two students. Each group of two should pair program for at least the mandatory part.
 
 Resources
----------
+Read or watch:
 
-**Read or watch**:
-
--   [Sorting algorithm](https://alx-intranet.hbtn.io/rltoken/-j5MKLBlzZAC2RfJ5DTBIg "Sorting algorithm")
--   [Big O notation](https://alx-intranet.hbtn.io/rltoken/WRvrE2BaNVQFssHiUATTrw "Big O notation")
--   [Sorting algorithms animations](https://alx-intranet.hbtn.io/rltoken/ol0P7NbYVb5R31iOv4Q40A "Sorting algorithms animations")
--   [15 sorting algorithms in 6 minutes](https://alx-intranet.hbtn.io/rltoken/_I0aEvhfJ66Xyob6dd9Utw "15 sorting algorithms in 6 minutes") (***WARNING**: The following video can trigger seizure/epilepsy. It is not required for the project, as it is only a funny visualization of different sorting algorithms*)
-
+Sorting algorithm
+Big O notation
+Sorting algorithms animations
+15 sorting algorithms in 6 minutes (WARNING: The following video can trigger seizure/epilepsy. It is not required for the project, as it is only a funny visualization of different sorting algorithms)
+CS50 Algorithms explanation in detail by David Malan
+All about sorting algorithms
 Learning Objectives
--------------------
+At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-At the end of this project, you are expected to be able to [explain to anyone](https://alx-intranet.hbtn.io/rltoken/b-QhraVUoSGmQ1C4QfNoFw "explain to anyone"), **without the help of Google**:
-
-### General
-
--   At least four different sorting algorithms
--   What is the Big O notation, and how to evaluate the time complexity of an algorithm
--   How to select the best sorting algorithm for a given input
--   What is a stable sorting algorithm
-
+General
+At least four different sorting algorithms
+What is the Big O notation, and how to evaluate the time complexity of an algorithm
+How to select the best sorting algorithm for a given input
+What is a stable sorting algorithm
+Copyright - Plagiarism
+You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
+You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
+You are not allowed to publish any content of this project.
+Any form of plagiarism is strictly forbidden and will result in removal from the program.
 Requirements
-------------
-
-### General
-
--   Allowed editors: `vi`, `vim`, `emacs`
--   All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
--   All your files should end with a new line
--   A `README.md` file, at the root of the folder of the project, is mandatory
--   Your code should use the `Betty` style. It will be checked using [betty-style.pl](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl "betty-style.pl") and [betty-doc.pl](https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl "betty-doc.pl")
--   You are not allowed to use global variables
--   No more than 5 functions per file
--   Unless specified otherwise, you are not allowed to use the standard library. Any use of functions like *printf, puts, ...* is totally forbidden.
--   In the following examples, the `main.c` files are shown as examples. You can use them to test your functions, but you don't have to push them to your repo (if you do we won't take them into account). We will use our own `main.c` files at compilation. Our `main.c` files might be different from the one shown in the examples
--   The prototypes of all your functions should be included in your header file called `sort.h`
--   Don't forget to push your header file
--   All your header files should be include guarded
--   A list/array does not need to be sorted if its size is less than 2.
-
-### GitHub
-
-**There should be one project repository per group. If you clone/fork/whatever a project repository with the same name before the second deadline, you risk a 0% score.**
+General
+Allowed editors: vi, vim, emacs
+All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
+All your files should end with a new line
+A README.md file, at the root of the folder of the project, is mandatory
+Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
+You are not allowed to use global variables
+No more than 5 functions per file
+Unless specified otherwise, you are not allowed to use the standard library. Any use of functions like printf, puts, … is totally forbidden.
+In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one shown in the examples
+The prototypes of all your functions should be included in your header file called sort.h
+Don’t forget to push your header file
+All your header files should be include guarded
+A list/array does not need to be sorted if its size is less than 2.
+GitHub
+There should be one project repository per group. If you clone/fork/whatever a project repository with the same name before the second deadline, you risk a 0% score.
 
 More Info
----------
-
-### Data Structure and Functions
-
--   For this project you are given the following `print_array`, and `print_list` functions:
-
-```
+Data Structure and Functions
+For this project you are given the following print_array, and print_list functions:
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -87,10 +81,6 @@ void print_array(const int *array, size_t size)
     }
     printf("\n");
 }
-
-```
-
-```
 #include <stdio.h>
 #include "sort.h"
 
@@ -114,14 +104,9 @@ void print_list(const listint_t *list)
     }
     printf("\n");
 }
-
-```
-
--   Our files `print_array.c` and `print_list.c` (containing the `print_array` and `print_list` functions) will be compiled with your functions during the correction.
--   Please declare the prototype of the functions `print_array` and `print_list` in your `sort.h` header file
--   Please use the following data structure for doubly linked list:
-
-```
+Our files print_array.c and print_list.c (containing the print_array and print_list functions) will be compiled with your functions during the correction.
+Please declare the prototype of the functions print_array and print_list in your sort.h header file
+Please use the following data structure for doubly linked list:
 /**
  * struct listint_s - Doubly linked list node
  *
@@ -135,53 +120,39 @@ typedef struct listint_s
     struct listint_s *prev;
     struct listint_s *next;
 } listint_t;
-
-```
-
 Please, note this format is used for Quiz and Task questions.
 
--   `O(1)`
--   `O(n)`
--   `O(n!)`
--   n square -> `O(n^2)`
--   log(n) -> `O(log(n))`
--   n * log(n) -> `O(nlog(n))`
--   n + k -> `O(n+k)`
--   ...
+O(1)
+O(n)
+O(n!)
+n square -> O(n^2)
+log(n) -> O(log(n))
+n * log(n) -> O(nlog(n))
+n + k -> O(n+k)
+…
+Please use the “short” notation (don’t use constants). Example: O(nk) or O(wn) should be written O(n). If an answer is required within a file, all your answers files must have a newline at the end.
 
-Please use the "short" notation (don't use constants). Example: `O(nk)` or `O(wn)` should be written `O(n)`. If an answer is required within a file, all your answers files must have a newline at the end.
-
-### Tests
-
-Here is a quick tip to help you test your sorting algorithms with big sets of random integers: [Random.org](https://alx-intranet.hbtn.io/rltoken/YR-VWQbICB59wZs1eAaI3w "Random.org")
+Tests
+Here is a quick tip to help you test your sorting algorithms with big sets of random integers: Random.org
 
 Quiz questions
---------------
-
-**Great!** You've completed the quiz successfully! Keep going! (Show quiz)
-
+Great! You've completed the quiz successfully! Keep going! (Show quiz)
 Tasks
------
-
-### 0\. Bubble sort
-
+0. Bubble sort
 mandatory
 
-Score: 0.00% (Checks completed: 0.00%)
 
-Write a function that sorts an array of integers in ascending order using the [Bubble sort](https://alx-intranet.hbtn.io/rltoken/awhP8BhtkGi-lwmMc2-KAw "Bubble sort") algorithm
 
--   Prototype: `void bubble_sort(int *array, size_t size);`
--   You're expected to print the `array` after each time you swap two elements (See example below)
+Write a function that sorts an array of integers in ascending order using the Bubble sort algorithm
 
-Write in the file `0-O`, the big O notations of the time complexity of the Bubble sort algorithm, with 1 notation per line:
+Prototype: void bubble_sort(int *array, size_t size);
+You’re expected to print the array after each time you swap two elements (See example below)
+Write in the file 0-O, the big O notations of the time complexity of the Bubble sort algorithm, with 1 notation per line:
 
--   in the best case
--   in the average case
--   in the worst case
-
-```
-alex@/tmp/sort$ cat 0-main.c
+in the best case
+in the average case
+in the worst case
+alex@/tmp/sort$ cat 0-main.c 
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -230,36 +201,27 @@ alex@/tmp/sort$ ./bubble
 7, 13, 19, 48, 52, 71, 73, 86, 96, 99
 
 7, 13, 19, 48, 52, 71, 73, 86, 96, 99
-alex@/tmp/sort$
+alex@/tmp/sort$ 
+Repo:
 
-```
-
-**Repo:**
-
--   GitHub repository: `sorting_algorithms`
--   File: `0-bubble_sort.c, 0-O`
-
- Done? Help Check your code Ask for a new correction QA Review
-
-### 1\. Insertion sort
-
+GitHub repository: sorting_algorithms
+File: 0-bubble_sort.c, 0-O
+  
+1. Insertion sort
 mandatory
 
-Score: 0.00% (Checks completed: 0.00%)
 
-Write a function that sorts a doubly linked list of integers in ascending order using the [Insertion sort](https://alx-intranet.hbtn.io/rltoken/GocxRKbPdsmERXeOHMCO2w "Insertion sort") algorithm
 
--   Prototype: `void insertion_sort_list(listint_t **list);`
--   You are not allowed to modify the integer `n` of a node. You have to swap the nodes themselves.
--   You're expected to print the `list` after each time you swap two elements (See example below)
+Write a function that sorts a doubly linked list of integers in ascending order using the Insertion sort algorithm
 
-Write in the file `1-O`, the big O notations of the time complexity of the Insertion sort algorithm, with 1 notation per line:
+Prototype: void insertion_sort_list(listint_t **list);
+You are not allowed to modify the integer n of a node. You have to swap the nodes themselves.
+You’re expected to print the list after each time you swap two elements (See example below)
+Write in the file 1-O, the big O notations of the time complexity of the Insertion sort algorithm, with 1 notation per line:
 
--   in the best case
--   in the average case
--   in the worst case
-
-```
+in the best case
+in the average case
+in the worst case
 alex@/tmp/sort$ cat 1-main.c
 #include <stdio.h>
 #include <stdlib.h>
@@ -345,34 +307,25 @@ alex@/tmp/sort$ ./insertion
 
 7, 13, 19, 48, 52, 71, 73, 86, 96, 99
 alex@/tmp/sort$
+Repo:
 
-```
-
-**Repo:**
-
--   GitHub repository: `sorting_algorithms`
--   File: `1-insertion_sort_list.c, 1-O`
-
- Done? Help Check your code Ask for a new correction QA Review
-
-### 2\. Selection sort
-
+GitHub repository: sorting_algorithms
+File: 1-insertion_sort_list.c, 1-O
+  
+2. Selection sort
 mandatory
 
-Score: 0.00% (Checks completed: 0.00%)
 
-Write a function that sorts an array of integers in ascending order using the [Selection sort](https://alx-intranet.hbtn.io/rltoken/SEbg0fBEraioQcl-igvUSw "Selection sort") algorithm
 
--   Prototype: `void selection_sort(int *array, size_t size);`
--   You're expected to print the `array` after each time you swap two elements (See example below)
+Write a function that sorts an array of integers in ascending order using the Selection sort algorithm
 
-Write in the file `2-O`, the big O notations of the time complexity of the Selection sort algorithm, with 1 notation per line:
+Prototype: void selection_sort(int *array, size_t size);
+You’re expected to print the array after each time you swap two elements (See example below)
+Write in the file 2-O, the big O notations of the time complexity of the Selection sort algorithm, with 1 notation per line:
 
--   in the best case
--   in the average case
--   in the worst case
-
-```
+in the best case
+in the average case
+in the worst case
 alex@/tmp/sort$ cat 2-main.c
 #include <stdio.h>
 #include <stdlib.h>
@@ -395,7 +348,7 @@ int main(void)
     print_array(array, n);
     return (0);
 }
-alex@/tmp/sort$ gcc -Wall -Wextra -Werror -pedantic  -std=gnu89
+alex@/tmp/sort$ gcc -Wall -Wextra -Werror -pedantic  -std=gnu89 
 2-main.c 2-selection_sort.c print_array.c -o select
 alex@/tmp/sort$ ./select
 19, 48, 99, 71, 13, 52, 96, 73, 86, 7
@@ -410,36 +363,27 @@ alex@/tmp/sort$ ./select
 
 7, 13, 19, 48, 52, 71, 73, 86, 96, 99
 alex@/tmp/sort$
+Repo:
 
-```
-
-**Repo:**
-
--   GitHub repository: `sorting_algorithms`
--   File: `2-selection_sort.c, 2-O`
-
- Done? Help Check your code Ask for a new correction QA Review
-
-### 3\. Quick sort
-
+GitHub repository: sorting_algorithms
+File: 2-selection_sort.c, 2-O
+  
+3. Quick sort
 mandatory
 
-Score: 0.00% (Checks completed: 0.00%)
 
-Write a function that sorts an array of integers in ascending order using the [Quick sort](https://alx-intranet.hbtn.io/rltoken/_pBTrH0Xyo4BRmQn4CtnMg "Quick sort") algorithm
 
--   Prototype: `void quick_sort(int *array, size_t size);`
--   You must implement the `Lomuto` partition scheme.
--   The pivot should always be the last element of the partition being sorted.
--   You're expected to print the `array` after each time you swap two elements (See example below)
+Write a function that sorts an array of integers in ascending order using the Quick sort algorithm
 
-Write in the file `3-O`, the big O notations of the time complexity of the Quick sort algorithm, with 1 notation per line:
+Prototype: void quick_sort(int *array, size_t size);
+You must implement the Lomuto partition scheme.
+The pivot should always be the last element of the partition being sorted.
+You’re expected to print the array after each time you swap two elements (See example below)
+Write in the file 3-O, the big O notations of the time complexity of the Quick sort algorithm, with 1 notation per line:
 
--   in the best case
--   in the average case
--   in the worst case
-
-```
+in the best case
+in the average case
+in the worst case
 alex@/tmp/sort$ cat 3-main.c
 #include <stdio.h>
 #include <stdlib.h>
@@ -476,14 +420,9 @@ alex@/tmp/sort$ ./quick
 
 7, 13, 19, 48, 52, 71, 73, 86, 96, 99
 alex@/tmp/sort$
+Repo:
 
-```
-
-**Repo:**
-
--   GitHub repository: `sorting_algorithms`
--   File: `3-quick_sort.c, 3-O`
-
- Done? Help Check your code Ask for a new correction QA Review
-
-[Done with the mandatory tasks? Unlock 9 advanced tasks now!](https://alx-intranet.hbtn.io/projects/248/unlock_optionals)
+GitHub repository: sorting_algorithms
+File: 3-quick_sort.c, 3-O
+  
+Copyright © 2023 ALX, All rights reserved.ng_algorithms
